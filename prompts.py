@@ -28,6 +28,9 @@ Then, if valid, respond in this format:
 ...
 
 ### 📊 Market Sentiment
+output one of: Positive, Negative, Neutral
+leave two lines gap after this.
+in the next line, provide a 1 line reason for the sentiment.
 ...
 
 ### 💡 Actionable Insights

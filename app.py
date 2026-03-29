@@ -37,15 +37,16 @@ if st.button("Analyze"):
         with st.spinner("Analyzing..."):
             full_input = f"User Type: {user_type}\nHeadline: {headline}\n\nNews: {news_input}"
             result = analyze_news(full_input, SYSTEM_PROMPT)
+            result_lower = result.lower()
 
         st.divider()
 
         # Sentiment badge
-        if "Positive" in result:
+        if "Positive" in result_lower:
             st.success("Market Sentiment: Positive 📈")
-        elif "Negative" in result:
+        elif "Negative" in result_lower:
             st.error("Market Sentiment: Negative 📉")
-        elif "Neutral" in result:
+        elif "Neutral" in result_lower:
             st.info("Market Sentiment: Neutral ⚖️")
 
         st.subheader("📊 Analysis")
