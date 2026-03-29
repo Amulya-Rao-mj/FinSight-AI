@@ -34,3 +34,4 @@ Paste financial news → Get insights instantly
 ## ⚠️ Note
 
 This tool provides general insights, not financial advice.
+So, no financial decisions should be made considering the output of this tool.
