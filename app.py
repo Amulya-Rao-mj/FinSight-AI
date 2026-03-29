@@ -2,12 +2,13 @@ import streamlit as st
 from utils import analyze_news
 from prompts import SYSTEM_PROMPT
 
-st.set_page_config(page_title="AI News Money Mentor", layout="centered")
+st.set_page_config(page_title="FinSight AI", layout="centered")
 
-st.title("💸 AI News-to-Action Money Mentor")
+st.title("📊 FinSight AI")
+st.divider()
+st.markdown("Turning Financial news into actionable insights with AI")
 
-st.write("Paste a financial news article and get insights instantly.")
-
+st.write("Analyze financial news, understand market sentiment, and get smart insights instantly.")
 news_input = st.text_area("Enter Financial News", height=200)
 
 if st.button("Analyze"):
