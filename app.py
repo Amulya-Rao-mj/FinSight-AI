@@ -10,12 +10,20 @@ st.write("Analyze financial news, understand market sentiment, and get smart ins
 
 st.divider()
 
+user_type = st.selectbox(
+    "Select User Type",
+    ["Beginner Investor", "Intermediate Investor", "Senior Citizen"]
+)
+
+
+
 if "news_input" not in st.session_state:
     st.session_state.news_input = ""
 
 if st.button("Try Sample News"):
     st.session_state.news_input = """The Reserve Bank of India increased the repo rate by 25 basis points to control inflation. Banking stocks gained while real estate stocks declined due to higher borrowing costs."""
 
+headline = st.text_input("News Headline (optional)")
 news_input = st.text_area(
     "Enter Financial News",
     height=200,
@@ -27,7 +35,8 @@ if st.button("Analyze"):
         st.warning("Please enter some news text.")
     else:
         with st.spinner("Analyzing..."):
-            result = analyze_news(news_input, SYSTEM_PROMPT)
+            full_input = f"User Type: {user_type}\nHeadline: {headline}\n\nNews: {news_input}"
+            result = analyze_news(full_input, SYSTEM_PROMPT)
 
         st.divider()
 
